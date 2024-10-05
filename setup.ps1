@@ -33,7 +33,8 @@ $packages = @(
   "ScooterSoftware.BeyondCompare4",
   "GitHub.cli",
   "KirillOsenkov.MSBuildStructuredLogViewer",
-  "dotPDN.PaintDotNet"
+  "dotPDN.PaintDotNet",
+  "SlackTechnologies.Slack"
 )
 
 $dotnetVersions = @(
