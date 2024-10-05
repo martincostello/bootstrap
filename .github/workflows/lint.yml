@@ -1,0 +1,54 @@
+name: lint
+
+on:
+  push:
+    branches: [ main ]
+    paths-ignore:
+      - '**/*.gitattributes'
+      - '**/*.gitignore'
+      - '**/*.md'
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  FORCE_COLOR: 3
+  TERM: xterm
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Add actionlint problem matcher
+      run: echo "::add-matcher::.github/actionlint-matcher.json"
+
+    - name: Lint workflows
+      uses: docker://rhysd/actionlint@sha256:7617f05bd698cd2f1c3aedc05bc733ccec92cca0738f3e8722c32c5b42c70ae6 # v1.7.3
+      with:
+        args: -color
+
+    - name: Lint PowerShell
+      shell: pwsh
+      run: |
+        $settings = Join-Path . "ScriptAnalyzerProfile.ps1"
+        Invoke-ScriptAnalyzer `
+            -Path . `
+            -Recurse `
+            -ReportSummary `
+            -Settings $settings `
+            -EnableExit
+
+    - name: Lint markdown
+      uses: DavidAnson/markdownlint-cli2-action@v17
+      with:
+        config: .markdownlint.json
+        globs: |
+          **/*.md

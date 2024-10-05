@@ -1,2 +1,3 @@
-# bootstrap
-Scripts to setup a new computer
+# Bootstrap
+
+Scripts to setup a new computer.
