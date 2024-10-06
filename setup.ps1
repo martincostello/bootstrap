@@ -34,7 +34,8 @@ $packages = @(
   "GitHub.cli",
   "KirillOsenkov.MSBuildStructuredLogViewer",
   "dotPDN.PaintDotNet",
-  "SlackTechnologies.Slack"
+  "SlackTechnologies.Slack",
+  "microsoft.azd"
 )
 
 $dotnetVersions = @(
