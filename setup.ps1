@@ -35,7 +35,8 @@ $packages = @(
   "KirillOsenkov.MSBuildStructuredLogViewer",
   "dotPDN.PaintDotNet",
   "SlackTechnologies.Slack",
-  "microsoft.azd"
+  "microsoft.azd",
+  "Microsoft.Sysinternals.ProcessExplorer"
 )
 
 $dotnetVersions = @(
