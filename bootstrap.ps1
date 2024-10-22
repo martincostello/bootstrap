@@ -32,6 +32,7 @@ Write-Information "Installing PowerShell..."
 winget install --id Microsoft.PowerShell --exact --source winget --accept-package-agreements
 
 <#
+# See https://learn.microsoft.com/windows/dev-drive/#storing-package-cache-on-dev-drive
 Write-Information "Configure package caches for Dev Drive..."
 setx /M CARGO_HOME D:\packages\cargo
 setx /M GRADLE_USER_HOME "D:\packages\gradle"
