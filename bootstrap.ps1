@@ -30,3 +30,14 @@ wsl --set-default-version 2
 
 Write-Information "Installing PowerShell..."
 winget install --id Microsoft.PowerShell --exact --source winget --accept-package-agreements
+
+<#
+Write-Information "Configure package caches for Dev Drive..."
+setx /M CARGO_HOME D:\packages\cargo
+setx /M GRADLE_USER_HOME "D:\packages\gradle"
+setx /M MAVEN_OPTS "-Dmaven.repo.local=D:\packages\maven"
+setx /M npm_config_cache D:\packages\npm
+setx /M NUGET_PACKAGES D:\packages\nuget
+setx /M PIP_CACHE_DIR D:\packages\pip
+setx /M VCPKG_DEFAULT_BINARY_CACHE D:\packages\vcpkg
+#>
