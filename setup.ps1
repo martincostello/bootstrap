@@ -21,7 +21,7 @@ $packages = @(
   "AgileBits.1Password",
   "Microsoft.VisualStudioCode",
   "Git.Git",
-  "github-desktop",
+  "GitHub.GitHubDesktop",
   "OpenJS.NodeJS.LTS",
   "Elgato.CameraHub",
   "Elgato.CameraHub",
