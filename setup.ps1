@@ -24,7 +24,7 @@ $packages = @(
   "GitHub.GitHubDesktop",
   "OpenJS.NodeJS.LTS",
   "Elgato.CameraHub",
-  "Elgato.CameraHub",
+  "Elgato.ControlCenter",
   "Elgato.WaveLink",
   "SteelSeries.GG",
   "chocolatey.chocolatey",
