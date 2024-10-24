@@ -7,51 +7,7 @@ $ErrorActionPreference = "Stop"
 $InformationPreference = "Continue"
 $ProgressPreference = "SilentlyContinue"
 
-Write-Information "Checking for elevated permissions..."
-if (-Not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] 'Administrator')) {
-    Write-Warning "This script must be run as an administrator."
-    return
-}
-
-Write-Information "Installing WinGet packages..."
-
-$packages = @(
-  "Microsoft.PowerShell",
-  "Starship.Starship",
-  "AgileBits.1Password",
-  "Microsoft.VisualStudioCode",
-  "Git.Git",
-  "GitHub.GitHubDesktop",
-  "OpenJS.NodeJS.LTS",
-  "Elgato.CameraHub",
-  "Elgato.ControlCenter",
-  "Elgato.WaveLink",
-  "SteelSeries.GG",
-  "chocolatey.chocolatey",
-  "JanDeDobbeleer.OhMyPosh",
-  "Docker.DockerDesktop",
-  "ScooterSoftware.BeyondCompare4",
-  "GitHub.cli",
-  "KirillOsenkov.MSBuildStructuredLogViewer",
-  "dotPDN.PaintDotNet",
-  "SlackTechnologies.Slack",
-  "microsoft.azd",
-  "Microsoft.Sysinternals.ProcessExplorer"
-)
-
-$dotnetVersions = @(
-  "6",
-  "8"
-)
-
-foreach ($version in $dotnetVersions) {
-  $packages += "Microsoft.DotNet.SDK.${version}"
-}
-
-foreach ($id in $packages) {
-  Write-Information "Installing ${id}..."
-  winget install --id $id --exact --source winget --accept-package-agreements
-}
+& .\install-software.ps1
 
 Write-Information "Installing Chocolatey packages..."
 $chocoPackages = @(
