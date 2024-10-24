@@ -202,3 +202,19 @@ properties:
       settings:
         id: Microsoft.Sysinternals.ProcessExplorer
         source: winget
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Microsoft.Office
+      directives:
+        description: Install Microsoft Office
+      settings:
+        id: Microsoft.Office
+        source: winget
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Microsoft.Teams
+      directives:
+        description: Install Microsoft Teams
+      settings:
+        id: Microsoft.Teams
+        source: winget
