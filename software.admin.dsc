@@ -1,7 +1,32 @@
 # yaml-language-server: $schema=https://aka.ms/configuration-dsc-schema/0.2
 properties:
   configurationVersion: 0.2.0
+
+  assertions:
+    - resource: Microsoft.Windows.Developer/OsVersion
+      directives:
+        description: Verify Windows version
+        allowPrerelease: true
+      settings:
+        MinVersion: '10.0.22631'
+
   resources:
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Microsoft.WindowsTerminal
+      directives:
+        description: Install Windows Terminal
+      settings:
+        id: Microsoft.WindowsTerminal
+        source: winget
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Google.Chrome.EXE
+      directives:
+        description: Install Google Chrome
+      settings:
+        id: Google.Chrome.EXE
+        source: winget
 
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: Microsoft.PowerShell
@@ -33,6 +58,14 @@ properties:
         description: Install Node.js LTS
       settings:
         id: OpenJS.NodeJS.LTS
+        source: winget
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Kitware.CMake
+      directives:
+        description: Install CMake
+      settings:
+        id: Kitware.CMake
         source: winget
 
     - resource: Microsoft.WinGet.DSC/WinGetPackage
@@ -89,6 +122,22 @@ properties:
         description: Install Elgato Wave Link
       settings:
         id: Elgato.WaveLink
+        source: winget
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Nvidia.Broadcast
+      directives:
+        description: Install Nvidia Broadcast
+      settings:
+        id: Nvidia.Broadcast
+        source: winget
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Nvidia.VideoEffectsSDK.20xx-Turing
+      directives:
+        description: Install Nvidia Effects SDK
+      settings:
+        id: Nvidia.VideoEffectsSDK.20xx-Turing
         source: winget
 
     - resource: Microsoft.WinGet.DSC/WinGetPackage
@@ -204,6 +253,14 @@ properties:
         source: winget
 
     - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Microsoft.OneDrive
+      directives:
+        description: Install OneDrive
+      settings:
+        id: Microsoft.OneDrive
+        source: winget
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: Microsoft.Office
       directives:
         description: Install Microsoft Office
@@ -218,3 +275,57 @@ properties:
       settings:
         id: Microsoft.Teams
         source: winget
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Apple.Bonjour
+      directives:
+        description: Install Apple Bonjour
+      settings:
+        id: Apple.Bonjour
+        source: winget
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Microsoft.DevHome
+      directives:
+        description: Install Dev Home
+      settings:
+        id: Microsoft.DevHome
+        source: winget
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Microsoft.VisualStudio
+      directives:
+        description: Install Visual Studio
+      settings:
+        id: Microsoft.VisualStudio.2022.Enterprise
+        source: winget
+
+    - resource: Microsoft.VisualStudio.DSC/VSComponents
+      dependsOn:
+        - Microsoft.VisualStudio
+      directives:
+        description: Install required Visual Studio workloads
+      settings:
+        productId: Microsoft.VisualStudio.Product.Enterprise
+        channelId: VisualStudio.17.Release
+        vsConfigFile: '${WinGetConfigRoot}\.vsconfig'
+        includeRecommended: true
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Microsoft.VisualStudio.Preview
+      directives:
+        description: Install Visual Studio (Preview)
+      settings:
+        id: Microsoft.VisualStudio.2022.Enterprise.Preview
+        source: winget
+
+    - resource: Microsoft.VisualStudio.DSC/VSComponents
+      dependsOn:
+        - Microsoft.VisualStudio.Preview
+      directives:
+        description: Install required Visual Studio workloads
+      settings:
+        productId: Microsoft.VisualStudio.Product.Enterprise
+        channelId: VisualStudio.17.Preview
+        vsConfigFile: '${WinGetConfigRoot}\.vsconfig'
+        includeRecommended: true

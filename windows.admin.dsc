@@ -32,3 +32,9 @@ properties:
       settings:
         Ensure: Absent
         RestartExplorer: true
+
+    - resource: Microsoft.Windows.Developer/DeveloperMode
+      directives:
+        description: Enable Developer Mode
+      settings:
+        Ensure: Present

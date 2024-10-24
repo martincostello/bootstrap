@@ -18,19 +18,3 @@ foreach ($package in $chocoPackages) {
   Write-Host "Installing ${package}..."
   choco install $package --yes
 }
-
-
-Write-Information "Installing Microsoft Visual Studio..."
-
-$VSVersion = "2022"
-$VSEdition = "Enterprise"
-$VSArguments = @("--quiet")
-
-$vsconfig = Get-Content -Raw -Path ".vsconfig" | ConvertFrom-Json
-foreach ($component in $vsconfig.components) {
-  $VSArguments += "--add"
-  $VSArguments += $component
-}
-
-winget install --id "Microsoft.VisualStudio.${VSVersion}.${VSEdition}" --exact --source winget --accept-package-agreements --override "${VSArguments}"
-winget install --id "Microsoft.VisualStudio.${VSVersion}.${VSEdition}.Preview" --exact --source winget --accept-package-agreements --override "${VSArguments}"
