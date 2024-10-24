@@ -31,6 +31,8 @@ wsl --set-default-version 2
 Write-Information "Installing PowerShell..."
 winget install --id Microsoft.PowerShell --exact --source winget --accept-package-agreements
 
+Read-Host "Press any key once you have setup Dev Drive for D:\"
+
 <#
 # See https://learn.microsoft.com/windows/dev-drive/#storing-package-cache-on-dev-drive
 Write-Information "Configure package caches for Dev Drive..."
