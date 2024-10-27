@@ -61,11 +61,27 @@ properties:
         source: winget
 
     - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Python.Python.3.11
+      directives:
+        description: Install Python
+      settings:
+        id: Python.Python.3.11
+        source: winget
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: Kitware.CMake
       directives:
         description: Install CMake
       settings:
         id: Kitware.CMake
+        source: winget
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Ninja-build.Ninja
+      directives:
+        description: Install Ninja
+      settings:
+        id: Ninja-build.Ninja
         source: winget
 
     - resource: Microsoft.WinGet.DSC/WinGetPackage
