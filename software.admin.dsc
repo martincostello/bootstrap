@@ -85,6 +85,14 @@ properties:
         source: winget
 
     - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Microsoft.WindowsSDK.10.0.26100
+      directives:
+        description: Install Windows SDK
+      settings:
+        id: Microsoft.WindowsSDK.10.0.26100
+        source: winget
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: Git.Git
       directives:
         description: Install Git
