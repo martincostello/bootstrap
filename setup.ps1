@@ -18,3 +18,5 @@ foreach ($package in $chocoPackages) {
   Write-Host "Installing ${package}..."
   choco install $package --yes
 }
+
+Install-Module posh-git -Scope CurrentUser
