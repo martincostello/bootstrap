@@ -21,6 +21,8 @@ if ($osVersion.Version.Major -ge 11) {
     Read-Host "Press any key once you have installed WinGet"
 }
 
+Read-Host "Press any key once you have updated WinGet from https://github.com/microsoft/winget-cli/releases"
+
 Read-Host "Press any key once you have enabled developer mode"
 
 Write-Information "Installing Windows Subsystem for Linux..."
