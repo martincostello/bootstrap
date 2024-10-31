@@ -19,4 +19,5 @@ foreach ($package in $chocoPackages) {
   choco install $package --yes
 }
 
-Install-Module posh-git -Scope CurrentUser
+Install-Module -Name posh-git -Scope CurrentUser
+Install-Module -Name Terminal-Icons -Repository PSGallery
