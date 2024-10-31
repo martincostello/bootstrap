@@ -36,6 +36,8 @@ wsl --install --distribution Ubuntu --no-launch
 Write-Information "Installing PowerShell..."
 winget install --id Microsoft.PowerShell --exact --source winget --accept-package-agreements
 
+Read-Host "Press any key once Cascadia Code fonts installed from https://github.com/microsoft/cascadia-code/releases"
+
 Read-Host "Press any key once you have setup Dev Drive for D:\"
 
 <#
