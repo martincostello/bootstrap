@@ -25,6 +25,8 @@ Read-Host "Press any key once you have updated WinGet from https://github.com/mi
 
 Read-Host "Press any key once you have enabled developer mode"
 
+Read-Host "Press any key once you have installed Dev Home from https://aka.ms/devhome"
+
 Write-Information "Installing Windows Subsystem for Linux..."
 Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
 wsl --update
