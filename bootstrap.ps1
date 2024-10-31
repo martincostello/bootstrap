@@ -25,11 +25,8 @@ Read-Host "Press any key once you have enabled developer mode"
 
 Write-Information "Installing Windows Subsystem for Linux..."
 Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
-
-# TODO Need to install a distro first
-wsl --install --no-launch
-
 wsl --set-default-version 2
+wsl --install --distribution Ubuntu --no-launch
 
 Write-Information "Installing PowerShell..."
 winget install --id Microsoft.PowerShell --exact --source winget --accept-package-agreements
