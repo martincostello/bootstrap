@@ -44,7 +44,7 @@ Read-Host "Press any key once you have setup Dev Drive for D:\"
 # See https://learn.microsoft.com/windows/dev-drive/#storing-package-cache-on-dev-drive
 Write-Information "Configure package caches for Dev Drive..."
 setx /M CARGO_HOME D:\packages\cargo
-setx /M GRADLE_USER_HOME "D:\packages\gradle"
+setx /M GRADLE_USER_HOME D:\packages\gradle
 setx /M MAVEN_OPTS "-Dmaven.repo.local=D:\packages\maven"
 setx /M npm_config_cache D:\packages\npm
 setx /M NUGET_PACKAGES D:\packages\nuget
