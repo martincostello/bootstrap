@@ -220,13 +220,13 @@ properties:
         id: Microsoft.DotNet.SDK.8
         source: winget
 
-#    - resource: Microsoft.WinGet.DSC/WinGetPackage
-#      id: Microsoft.DotNet.SDK.9
-#      directives:
-#        description: Install .NET 9 SDK
-#      settings:
-#        id: Microsoft.DotNet.SDK.9
-#        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Microsoft.DotNet.SDK.9
+      directives:
+        description: Install .NET 9 SDK
+      settings:
+        id: Microsoft.DotNet.SDK.9
+        source: winget
 
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: Microsoft.DotNet.SDK.Preview
