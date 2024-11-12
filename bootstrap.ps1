@@ -40,14 +40,13 @@ Read-Host "Press any key once Cascadia Code fonts installed from https://github.
 
 Read-Host "Press any key once you have setup Dev Drive for D:\"
 
-<#
 # See https://learn.microsoft.com/windows/dev-drive/#storing-package-cache-on-dev-drive
-Write-Information "Configure package caches for Dev Drive..."
-setx /M CARGO_HOME D:\packages\cargo
-setx /M GRADLE_USER_HOME D:\packages\gradle
-setx /M MAVEN_OPTS "-Dmaven.repo.local=D:\packages\maven"
-setx /M npm_config_cache D:\packages\npm
-setx /M NUGET_PACKAGES D:\packages\nuget
-setx /M PIP_CACHE_DIR D:\packages\pip
-setx /M VCPKG_DEFAULT_BINARY_CACHE D:\packages\vcpkg
-#>
+Write-Information "Configure package caches for development..."
+$packagesRoot = "D:\packages"
+setx /M CARGO_HOME (Join-Path $packagesRoot "cargo")
+setx /M GRADLE_USER_HOME (Join-Path $packagesRoot "gradle")
+setx /M MAVEN_OPTS "-Dmaven.repo.local=$(Join-Path $packagesRoot maven)"
+setx /M npm_config_cache (Join-Path $packagesRoot "npm")
+setx /M NUGET_PACKAGES (Join-Path $packagesRoot "nuget")
+setx /M PIP_CACHE_DIR (Join-Path $packagesRoot "pip")
+setx /M VCPKG_DEFAULT_BINARY_CACHE (Join-Path $packagesRoot "vcpkg")
