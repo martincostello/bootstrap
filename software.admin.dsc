@@ -149,14 +149,6 @@ properties:
         source: winget
 
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: Nvidia.Broadcast
-      directives:
-        description: Install Nvidia Broadcast
-      settings:
-        id: Nvidia.Broadcast
-        source: winget
-
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: Nvidia.VideoEffectsSDK.20xx-Turing
       directives:
         description: Install Nvidia Effects SDK
