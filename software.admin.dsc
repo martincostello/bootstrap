@@ -205,14 +205,6 @@ properties:
         source: winget
 
     - resource: Microsoft.WinGet.DSC/WinGetPackage
-      id: Microsoft.DotNet.SDK.6
-      directives:
-        description: Install .NET 6 SDK
-      settings:
-        id: Microsoft.DotNet.SDK.6
-        source: winget
-
-    - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: Microsoft.DotNet.SDK.8
       directives:
         description: Install .NET 8 SDK
