@@ -11,7 +11,8 @@ $ProgressPreference = "SilentlyContinue"
 
 Write-Information "Installing Chocolatey packages..."
 $chocoPackages = @(
-  "poshgit"
+  "poshgit",
+  "mingw"
 )
 
 foreach ($package in $chocoPackages) {
