@@ -69,6 +69,14 @@ properties:
         source: winget
 
     - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: RubyInstallerTeam.RubyWithDevKit.3.3
+      directives:
+        description: Install Ruby
+      settings:
+        id: RubyInstallerTeam.RubyWithDevKit.3.3
+        source: winget
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: Kitware.CMake
       directives:
         description: Install CMake
