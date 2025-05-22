@@ -21,6 +21,14 @@ properties:
         source: winget
 
     - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Microsoft.Edit
+      directives:
+        description: Install Windows Edit
+      settings:
+        id: Microsoft.Edit
+        source: winget
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: Google.Chrome.EXE
       directives:
         description: Install Google Chrome
