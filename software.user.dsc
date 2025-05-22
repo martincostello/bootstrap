@@ -4,6 +4,14 @@ properties:
   resources:
 
     - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Microsoft.PowerToys
+      directives:
+        description: Install Windows PowerToys
+      settings:
+        id: Microsoft.PowerToys
+        source: winget
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: Spotify.Spotify
       directives:
         description: Install Spotify
