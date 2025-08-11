@@ -141,6 +141,14 @@ properties:
         source: winget
 
     - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Hugo.Hugo.Extended
+      directives:
+        description: Install Hugo
+      settings:
+        id: Hugo.Hugo.Extended
+        source: winget
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: Elgato.CameraHub
       directives:
         description: Install Elgato Camera Hub
