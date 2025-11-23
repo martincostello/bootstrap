@@ -269,6 +269,14 @@ properties:
         source: winget
 
     - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Amazon.AWSCLI
+      directives:
+        description: Install AWS CLI
+      settings:
+        id: Amazon.AWSCLI
+        source: winget
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: microsoft.azd
       directives:
         description: Install Azure CLI (azd)
