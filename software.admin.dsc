@@ -277,6 +277,14 @@ properties:
         source: winget
 
     - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: GnuPG.Gpg4win
+      directives:
+        description: Install GPG
+      settings:
+        id: GnuPG.Gpg4win
+        source: winget
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: microsoft.azd
       directives:
         description: Install Azure CLI (azd)
