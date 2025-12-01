@@ -27,7 +27,7 @@ jobs:
     steps:
 
     - name: Checkout code
-      uses: actions/checkout@v5
+      uses: actions/checkout@v6
       with:
         filter: 'tree:0'
         show-progress: false
