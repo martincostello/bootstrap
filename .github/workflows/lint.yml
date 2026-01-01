@@ -62,7 +62,7 @@ jobs:
         }
 
     - name: Lint markdown
-      uses: DavidAnson/markdownlint-cli2-action@v21
+      uses: DavidAnson/markdownlint-cli2-action@v22
       with:
         config: .markdownlint.json
         globs: |
