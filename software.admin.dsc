@@ -285,9 +285,17 @@ properties:
         source: winget
 
     - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Microsoft.AzureCLI
+      directives:
+        description: Install Azure CLI
+      settings:
+        id: Microsoft.AzureCLI
+        source: winget
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: microsoft.azd
       directives:
-        description: Install Azure CLI (azd)
+        description: Install azd
       settings:
         id: microsoft.azd
         source: winget
