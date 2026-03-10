@@ -309,6 +309,14 @@ properties:
         source: winget
 
     - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: Microsoft.Sysinternals.ProcessExplorer
+      directives:
+        description: Install Copilot CLI
+      settings:
+        id: GitHub.Copilot
+        source: winget
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: Microsoft.OneDrive
       directives:
         description: Install OneDrive
